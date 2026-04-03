@@ -9,7 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // cache bust: 1
+  // cache bust: 2
 }
 
 export default nextConfig
