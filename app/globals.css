@@ -1,0 +1,211 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light SaaS theme */
+  --background: oklch(0.98 0 0);
+  --surface: oklch(0.96 0 0);
+  --surface-raised: oklch(0.93 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  /* Brand accent: Naver green #03C75A → oklch(0.72 0.20 152) */
+  --primary: oklch(0.62 0.20 152);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-subtle: oklch(0.62 0.20 152 / 0.10);
+  /* Status colors — success: Saudi deep green #006C35 → oklch(0.45 0.15 152) */
+  --success: oklch(0.45 0.15 152);
+  --success-subtle: oklch(0.45 0.15 152 / 0.10);
+  --warning: oklch(0.68 0.17 72);
+  --warning-subtle: oklch(0.68 0.17 72 / 0.12);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --destructive-subtle: oklch(0.55 0.22 27 / 0.10);
+  /* Neutrals — cool gray */
+  --secondary: oklch(0.93 0.005 152);
+  --secondary-foreground: oklch(0.25 0 0);
+  --muted: oklch(0.93 0.005 152);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: oklch(0.93 0.005 152);
+  --accent-foreground: oklch(0.15 0 0);
+  --border: oklch(0.88 0.004 152);
+  --border-subtle: oklch(0.92 0.002 152);
+  --input: oklch(0.93 0.005 152);
+  --ring: oklch(0.62 0.20 152 / 0.35);
+  /* Charts */
+  --chart-1: oklch(0.62 0.20 152);
+  --chart-2: oklch(0.45 0.15 152);
+  --chart-3: oklch(0.68 0.17 72);
+  --chart-4: oklch(0.55 0.22 27);
+  --chart-5: oklch(0.55 0.06 152);
+  --radius: 0.5rem;
+  /* GNB sidebar: Saudi green #006C35 */
+  --sidebar: oklch(0.35 0.13 152);
+  --sidebar-foreground: oklch(0.96 0 0);
+  --sidebar-primary: oklch(0.72 0.20 152);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.42 0.13 152);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(0.43 0.11 152);
+  --sidebar-ring: oklch(0.72 0.20 152 / 0.5);
+}
+
+.dark {
+  --background: oklch(0.98 0 0);
+  --surface: oklch(0.96 0 0);
+  --surface-raised: oklch(0.93 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.62 0.20 152);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-subtle: oklch(0.62 0.20 152 / 0.10);
+  --success: oklch(0.45 0.15 152);
+  --success-subtle: oklch(0.45 0.15 152 / 0.10);
+  --warning: oklch(0.68 0.17 72);
+  --warning-subtle: oklch(0.68 0.17 72 / 0.12);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --destructive-subtle: oklch(0.55 0.22 27 / 0.10);
+  --secondary: oklch(0.93 0.005 152);
+  --secondary-foreground: oklch(0.25 0 0);
+  --muted: oklch(0.93 0.005 152);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: oklch(0.93 0.005 152);
+  --accent-foreground: oklch(0.15 0 0);
+  --border: oklch(0.88 0.004 152);
+  --border-subtle: oklch(0.92 0.002 152);
+  --input: oklch(0.93 0.005 152);
+  --ring: oklch(0.62 0.20 152 / 0.35);
+  --sidebar: oklch(0.35 0.13 152);
+  --sidebar-foreground: oklch(0.96 0 0);
+  --sidebar-primary: oklch(0.72 0.20 152);
+  --sidebar-primary-foreground: oklch(0.15 0 0);
+  --sidebar-accent: oklch(0.42 0.13 152);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(0.43 0.11 152);
+  --sidebar-ring: oklch(0.72 0.20 152 / 0.5);
+}
+
+@theme inline {
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Pretendard Variable', 'Pretendard', monospace;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* RTL: flip the outermost flex row so GNB moves to the right and plugin sidebar to the left */
+html[dir="rtl"] .app-main,
+body.rtl-layout .app-main {
+  flex-direction: row-reverse !important;
+}
+
+/* Prevent body/main from ever showing an outer scrollbar — inner panels own their own scroll */
+body {
+  overflow: hidden;
+}
+
+/* Mobile: allow body to fill dynamic viewport height without outer scroll */
+@media (max-width: 767px) {
+  body {
+    overflow: hidden;
+    /* Use dynamic viewport height so address-bar-aware on iOS Safari */
+    height: 100dvh;
+  }
+}
+
+/* Safe-area inset for iPhone home indicator */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Ensure inner scroll containers work well on mobile */
+@media (max-width: 767px) {
+  /* Smooth momentum scrolling for iOS */
+  .overflow-y-auto,
+  .overflow-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* GNB sidebar custom scrollbar - subtle on dark background */
+.gnb-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gnb-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gnb-scrollbar::-webkit-scrollbar-thumb {
+  background: oklch(0.96 0 0 / 0.2);
+  border-radius: 2px;
+}
+
+.gnb-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.96 0 0 / 0.4);
+}
+
+/* Firefox scrollbar for GNB */
+.gnb-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.96 0 0 / 0.2) transparent;
+}
